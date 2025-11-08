@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import logoBM from '../../public/companies/bm.png';
-import logoLnoks from '../../public/companies/Lnoks.png';
+import logoLnoks from '../../public/companies/lnoks.png';
 import logoRise from '../../public/companies/rise.png';
 import logoTired from '../../public/companies/tired.png';
 import logoTRC from '../../public/companies/trc.png';
