@@ -1,11 +1,11 @@
-import React from "react";
-import Container from "./Container";
-import FadeIn from "./FadeIn";
-import FooterNavigation from "./FooterNavigation";
-import Logo from "./Logo";
-import Link from "next/link";
+import React from 'react';
+import Container from './Container';
+import FadeIn from './FadeIn';
+import FooterNavigation from './FooterNavigation';
+import Logo from './Logo';
+import Link from 'next/link';
 
-const ArrowIcon = (props) => {
+const ArrowIcon = props => {
   return (
     <svg viewBox="0 0 16 6" aria-hidden="true" {...props}>
       <path
@@ -25,8 +25,7 @@ const NewsletterForm = () => {
         Sign up for our newsletter
       </h2>
       <p className="mt-4 text-sm text-neutral-700">
-        Subscribe to get the latest design news, articles, resources and
-        inspiration.
+        Subscribe to get the latest design news, articles, resources and inspiration.
       </p>
       <div className="relative mt-6">
         <input
@@ -61,13 +60,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t border-neutral-950/10 pt-12">
-          <Link href={"/"} aria-label="Home">
+          <Link href={'/'} aria-label="Home">
             <Logo className="h-8" fillOnHover>
-              Abdullah Agency
+              BehanceIQ™ by DizArm
             </Logo>
           </Link>
           <p className="text-sm text-neutral-700">
-            © Abdullah Agency Inc. {new Date().getFullYear()}
+            © DizArm Inc. {new Date().getFullYear()}
           </p>
         </div>
       </FadeIn>

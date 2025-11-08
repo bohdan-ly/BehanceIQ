@@ -8,3 +8,125 @@
   font-stretch: 75% 125%;
   src: url("../fonts//Mona-Sans.var.woff2");
 }
+
+/* RG-Spacious font family declarations */
+/**
+ * RG-Spacious Book - Normal weight (400) and style
+ * Used for body text and regular content
+ */
+@font-face {
+  font-family: "RG-Spacious";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/RG-SpaciousBook.ttf") format("truetype");
+}
+
+/**
+ * RG-Spacious Black Italic - Heavy weight (900) and italic style
+ * Used for emphasis and decorative text
+ */
+@font-face {
+  font-family: "RG-Spacious";
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+  src: url("../fonts/RG-SpaciousBlackItalic.ttf") format("truetype");
+}
+
+/* RG-Standard font family declarations */
+/**
+ * RG-Standard Book - Normal weight (400) and normal style
+ * Used for body text and regular content
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/RG-StandardBook.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Book Italic - Normal weight (400) and italic style
+ * Used for emphasized body text
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url("../fonts/RG-StandardBookItalic.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Medium - Medium weight (500) and normal style
+ * Used for slightly emphasized text
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/RG-StandardMedium.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Medium Italic - Medium weight (500) and italic style
+ * Used for slightly emphasized italic text
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+  src: url("../fonts/RG-StandardMediumItalic.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Semibold - Semibold weight (600) and normal style
+ * Used for subheadings and important text
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/RG-StandardSemibold.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Semibold Italic - Semibold weight (600) and italic style
+ * Used for emphasized subheadings
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 600;
+  font-display: swap;
+  font-style: italic;
+  src: url("../fonts/RG-StandardSemiboldItalic.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Bold - Bold weight (700) and normal style
+ * Used for headings and strong emphasis
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/RG-StandardBold.ttf") format("truetype");
+}
+
+/**
+ * RG-Standard Bold Italic - Bold weight (700) and italic style
+ * Used for emphasized headings
+ */
+@font-face {
+  font-family: "RG-Standard";
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+  src: url("../fonts/RG-StandardBoldItalic.ttf") format("truetype");
+}

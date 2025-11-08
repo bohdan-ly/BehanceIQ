@@ -1,34 +1,28 @@
-import Link from "next/link";
-import clsx from "clsx";
-import {
-  BsFacebook,
-  BsTwitter,
-  BsGithub,
-  BsYoutube,
-  BsLinkedin,
-} from "react-icons/bs";
+import clsx from 'clsx';
+import Link from 'next/link';
+import { BsBehance, BsInstagram, BsLinkedin, BsTelegram, BsYoutube } from 'react-icons/bs';
 
 export const SocialMediaProfiles = [
   {
-    title: "Youtube",
-    href: "https://www.youtube.com/watch?v=eAswnbWptBM",
+    title: 'Youtube',
+    href: 'https://www.youtube.com/@dizarm.creative',
     icon: BsYoutube,
   },
-  { title: "GitHub", href: "https://github.com/chrhi", icon: BsGithub },
+  { title: 'Instagram', href: 'https://www.instagram.com/ceo_uxui/', icon: BsInstagram },
   {
-    title: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=100010070348939",
-    icon: BsFacebook,
+    title: 'Telegram',
+    href: 'https://t.me/business_moom',
+    icon: BsTelegram,
   },
   {
-    title: "linkedin",
-    href: "https://www.linkedin.com/in/chehri-abdellah-4a8858267/",
+    title: 'linkedin',
+    href: 'https://www.linkedin.com/in/anitasuska',
     icon: BsLinkedin,
   },
   {
-    title: "Twitter",
-    href: "https://twitter.com/KING_IN_JUNGLE",
-    icon: BsTwitter,
+    title: 'Behance',
+    href: 'https://www.behance.net/dizarm',
+    icon: BsBehance,
   },
 ];
 
@@ -36,20 +30,16 @@ const SocialMedia = ({ className, invert = false }) => {
   return (
     <ul
       role="list"
-      className={clsx(
-        "flex gap-x-10",
-        invert ? "text-white" : "text-neutral-950",
-        className
-      )}
+      className={clsx('flex gap-x-10', invert ? 'text-white' : 'text-neutral-950', className)}
     >
-      {SocialMediaProfiles.map((item) => (
+      {SocialMediaProfiles.map(item => (
         <li key={item.title}>
           <Link
             href={item.href}
             aria-label={item.title}
             className={clsx(
-              "transition",
-              invert ? "hover:text-neutral-200" : "hover:text-neutral-700"
+              'transition',
+              invert ? 'hover:text-neutral-200' : 'hover:text-neutral-700'
             )}
           >
             <item.icon className="h-6 w-6 fill-current" />

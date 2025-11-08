@@ -17,6 +17,8 @@ module.exports = {
           ["Mona Sans", ...defaultTheme.fontFamily.sans],
           { fontVariationSettings: '"wdth" 125' },
         ],
+        spacious: ["RG-Spacious", ...defaultTheme.fontFamily.sans],
+        standard: ["RG-Standard", ...defaultTheme.fontFamily.sans],
       },
     },
   },
