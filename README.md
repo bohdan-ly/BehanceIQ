@@ -2,9 +2,7 @@
 
 ![BehanceIQ Framework](/public/agency.jpg)
 
-A powerful landing page for the **BehanceIQ™ Framework** - a proven lead generation system that helps B2B agencies break the feast-or-famine cycle and consistently generate **+20 leads/month with $7k+ average checks**.
-
-Built with **Next.js**, **Tailwind CSS**, and **Framer Motion**, this website showcases the framework that has helped scale DizArm from $0 to $1M in 2 years and generated over $10M in revenue for clients.
+A powerful landing page for the Built with **Next.js**, **Tailwind CSS**, and **Framer Motion**, this website showcases the framework that has helped scale DizArm from $0 to $1M in 2 years and generated over $10M in revenue for clients.
 
 ## 🚀 Features
 
