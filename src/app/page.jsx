@@ -12,11 +12,79 @@ import StrategyCallForm from '@/components/StrategyCallForm';
 import Testimonials from '@/components/Testimonials';
 import AutomatedAcquisitionSystems from '@/components/AutomatedAcquisitionSystems';
 import WhyListenToMe from '@/components/WhyListenToMe';
+import StructuredData from '@/components/StructuredData';
 import logoPeiko from '../../public/companies/peikodark.png';
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://behanceiq.com';
+
+export const metadata = {
+  title: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій | +20 Лідів/Місяць з Чеком від $7k',
+  description:
+    'BehanceIQ™ - доведена система генерації лідів для B2B агенцій. Отримайте +20 лідів на місяць з середнім чеком від $7k. Система, яка допомогла масштабувати агенції від $0 до $1M за 2 роки. Безкоштовна консультація та готові шаблони.',
+  keywords: [
+    'BehanceIQ',
+    'генерація лідів',
+    'B2B агенції',
+    'лідген',
+    'lead generation',
+    'Behance маркетинг',
+    'система лідів',
+    'автоматизація продажів',
+    'B2B маркетинг Україна',
+    'агентство лідів',
+    'генерація клієнтів',
+    'маркетингова система',
+    'продажі для агенцій',
+    'ліди для B2B',
+    '+20 лідів на місяць',
+    'чек від $7k',
+    'масштабування агенції',
+  ],
+  openGraph: {
+    title: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+    description:
+      'Отримайте +20 лідів на місяць з чеком від $7k. Доведена система, яка допомогла масштабувати агенції від $0 до $1M за 2 роки.',
+    url: baseUrl,
+    siteName: 'BehanceIQ™',
+    images: [
+      {
+        url: '/agency.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+      },
+    ],
+    locale: 'uk_UA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+    description:
+      'Отримайте +20 лідів на місяць з чеком від $7k. Доведена система для B2B агенцій.',
+    images: ['/agency.jpg'],
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 export default function Home() {
   return (
     <>
+      <StructuredData type="WebSite" />
+      <StructuredData type="Service" />
       <Container className="relative mt-24 sm:mt-32">
         {/* Notification - positioned in top right corner of hero section */}
         <FadeIn className="max-w-3xl">

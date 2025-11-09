@@ -1,0 +1,27 @@
+# robots.txt for BehanceIQ™
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://behanceiq.com/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay
+Crawl-delay: 1
+
+

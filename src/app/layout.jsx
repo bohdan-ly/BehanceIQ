@@ -1,19 +1,115 @@
-import RootLayout from "@/components/RootLayout";
-import "./globals.css";
+import RootLayout from '@/components/RootLayout';
+import './globals.css';
+
+// Base URL - Update this with your actual domain
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://behanceiq.com';
+const siteName = 'BehanceIQ™';
+const siteDescription =
+  'BehanceIQ™ - система генерації лідів для B2B агенцій. Отримайте +20 лідів на місяць з чеком від $7k. Доведена система, яка допомогла масштабувати агенції від $0 до $1M за 2 роки.';
 
 export const metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
-    template: "Abdullah",
-    default: "Abdullah",
+    default: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій | +20 Лідів/Місяць',
+    template: '%s | BehanceIQ™',
+  },
+  description: siteDescription,
+  keywords: [
+    'BehanceIQ',
+    'генерація лідів',
+    'B2B агенції',
+    'лідген',
+    'lead generation',
+    'Behance',
+    'маркетинг для агенцій',
+    'система лідів',
+    'автоматизація продажів',
+    'B2B маркетинг',
+    'агентство лідів',
+    'генерація клієнтів',
+    'маркетингова система',
+    'продажі для агенцій',
+    'ліди для B2B',
+    'Ukraine',
+    'Україна',
+  ],
+  authors: [{ name: 'Bohdan Lyshchenko', url: 'https://t.me/clip_swift' }],
+  creator: 'Bohdan Lyshchenko',
+  publisher: 'ClipSwift',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'uk_UA',
+    url: baseUrl,
+    siteName: siteName,
+    title: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+    description: siteDescription,
+    images: [
+      {
+        url: '/agency.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BehanceIQ™ - Система Генерації Лідів для B2B Агенцій',
+    description: siteDescription,
+    images: ['/agency.jpg'],
+    creator: '@behanceiq',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
+  alternates: {
+    canonical: baseUrl,
+    languages: {
+      'uk-UA': baseUrl,
+      'uk': baseUrl,
+    },
+  },
+  category: 'Marketing',
+  classification: 'Business',
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
   },
 };
 
 export default function Layout({ children }) {
   return (
-    <html
-      lang="en"
-      className="h-full bg-neutral-950 text-base antialiased text-neutral-100"
-    >
+    <html lang="uk" className="h-full bg-neutral-950 text-base antialiased text-neutral-100">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="theme-color" content="#8f00ff" />
+        <meta name="msapplication-TileColor" content="#8f00ff" />
+        <meta name="apple-mobile-web-app-title" content="BehanceIQ" />
+        <link rel="canonical" href={baseUrl} />
+        <link rel="alternate" hrefLang="uk" href={baseUrl} />
+        <link rel="alternate" hrefLang="uk-UA" href={baseUrl} />
+        <link rel="alternate" hrefLang="x-default" href={baseUrl} />
+      </head>
       <body className="flex min-h-full flex-col">
         <RootLayout>{children}</RootLayout>
       </body>

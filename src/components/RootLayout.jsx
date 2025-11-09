@@ -15,6 +15,7 @@ import Footer from './Footer';
 import TelegramButton from './TelegramButton';
 import Image from 'next/image';
 import Notification from './Notification';
+import DynamicFavicon from './DynamicFavicon';
 
 const Header = ({ panelId, invert = false, icon: Icon, expanded, onToggle, toggleRef }) => {
   // Container
@@ -115,6 +116,8 @@ const RootLayoutInner = ({ children }) => {
   }, []);
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
+      {/* Dynamic Favicon - changes every 5 seconds */}
+      <DynamicFavicon />
       <header>
         <div
           className="absolute left-0 right-0 top-2 z-40 pt-14"
@@ -185,8 +188,23 @@ const RootLayoutInner = ({ children }) => {
           <Footer />
           {/* Fixed Telegram Button */}
           <Notification
-            memberName="Emilia Gates"
-            message="just bought our service."
+            members={[
+              {
+                name: 'Emilia Gates',
+                image: '/avatars/1697718809001.jpeg',
+                message: 'just bought our service.',
+              },
+              {
+                name: 'John Smith',
+                image: '/avatars/1718570589655.jpeg',
+                message: 'just subscribed to BehanceIQ™.',
+              },
+              {
+                name: 'Sarah Johnson',
+                image: '/avatars/1697718809001.jpeg',
+                message: 'just started using our framework.',
+              },
+            ]}
             ctaText="Start with him"
           />
           <TelegramButton />

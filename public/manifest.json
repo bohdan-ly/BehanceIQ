@@ -1,0 +1,32 @@
+{
+  "name": "BehanceIQ™ - Система Генерації Лідів для B2B Агенцій",
+  "short_name": "BehanceIQ",
+  "description": "Система генерації лідів для B2B агенцій. Отримайте +20 лідів на місяць з чеком від $7k.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8f00ff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "marketing", "productivity"],
+  "lang": "uk-UA",
+  "dir": "ltr"
+}
+
+

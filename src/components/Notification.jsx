@@ -6,6 +6,31 @@ import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 
 /**
+ * Default members array - can be overridden via props
+ * Each member object contains: name, image, message
+ */
+const defaultMembers = [
+  {
+    name: 'Max Yakubovych',
+    image: '/avatars/1697718809001.jpeg',
+    message: 'Щойнов взяв консультацію',
+    cta: 'Забронювати місце',
+  },
+  {
+    name: 'Taras Oliinyk',
+    image: '/avatars/1718570589655.jpeg',
+    message: 'Придбав кервіництво по Behance',
+    cta: 'Отримати доступ',
+  },
+  {
+    name: 'Ivan Anisimov',
+    image: '/avatars/276.jpeg',
+    message: 'Отримав доступ до BehanceIQ™',
+    cta: 'Почати використання',
+  },
+];
+
+/**
  * Notification component that displays information about a new member purchase
  * Positioned in the top right corner and sticks within its container
  *
@@ -13,11 +38,10 @@ import { AnimatePresence, motion } from 'framer-motion';
  * - Appears after a random delay (2–5 seconds)
  * - Stays visible for 2 seconds
  * - Hides and repeats the cycle infinitely
+ * - Cycles through members array sequentially
  */
 const Notification = ({
-  memberName = 'Emilia Gates',
-  memberImage = '/avatars/1697718809001.jpeg',
-  message = 'just bought our service.',
+  members = defaultMembers,
   ctaText = 'Start with him',
   onClose,
   onCtaClick,
@@ -25,10 +49,15 @@ const Notification = ({
 }) => {
   // Controls whether the notification is currently shown
   const [isVisible, setIsVisible] = useState(false);
+  // Tracks the current member index in the array
+  const [currentMemberIndex, setCurrentMemberIndex] = useState(0);
 
   // Refs to manage timers across renders, ensuring proper cleanup
   const showTimeoutRef = useRef(null);
   const hideTimeoutRef = useRef(null);
+
+  // Get the current member from the array
+  const currentMember = defaultMembers[currentMemberIndex] || defaultMembers[0];
 
   /**
    * Returns a random delay in milliseconds between 2000ms (2s) and 5000ms (5s)
@@ -36,8 +65,19 @@ const Notification = ({
   const getRandomDelay = () => 3500 + Math.floor(Math.random() * 3000);
 
   /**
+   * Moves to the next member in the array, cycling back to the start if at the end
+   */
+  const moveToNextMember = () => {
+    setCurrentMemberIndex(prevIndex => {
+      // Cycle to next member, or back to 0 if at the end
+      return (prevIndex + 1) % defaultMembers.length;
+    });
+  };
+
+  /**
    * Schedules the notification to show after a random delay, then auto-hide after 2s.
    * This function re-schedules itself to create an infinite loop.
+   * Each cycle shows the next member from the array.
    */
   const scheduleShowCycle = () => {
     // Clear any pending show to avoid overlaps
@@ -45,6 +85,8 @@ const Notification = ({
       clearTimeout(showTimeoutRef.current);
     }
     showTimeoutRef.current = setTimeout(() => {
+      // Move to next member before showing
+      moveToNextMember();
       setIsVisible(true);
       // Auto-hide after 2 seconds
       if (hideTimeoutRef.current) {
@@ -60,8 +102,11 @@ const Notification = ({
 
   /**
    * Lifecycle: start the infinite show/hide loop on mount and cleanup timers on unmount
+   * Re-initialize if members array changes
    */
   useEffect(() => {
+    // Reset to first member if members array changes
+    setCurrentMemberIndex(0);
     scheduleShowCycle();
     return () => {
       if (showTimeoutRef.current) clearTimeout(showTimeoutRef.current);
@@ -69,7 +114,7 @@ const Notification = ({
     };
     // We intentionally exclude scheduleShowCycle from deps as it is stable in this scope
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [members.length]);
 
   /**
    * Handles the close button click
@@ -119,8 +164,8 @@ const Notification = ({
               {/* Avatar */}
               <div className="flex-shrink-0">
                 <Image
-                  src={memberImage}
-                  alt={memberName}
+                  src={currentMember.image}
+                  alt={currentMember.name}
                   width={48}
                   height={48}
                   className="h-12 w-12 rounded-full object-cover"
@@ -129,13 +174,17 @@ const Notification = ({
 
               {/* Text content */}
               <div className="flex-1 min-w-0">
-                <p className="font-standard text-sm font-semibold text-neutral-950">{memberName}</p>
-                <p className="font-standard mt-1 text-sm text-neutral-600">{message}</p>
+                <p className="font-standard text-sm font-semibold text-neutral-950">
+                  {currentMember.name}
+                </p>
+                <p className="font-standard mt-1 text-sm text-neutral-600">
+                  {currentMember.message}
+                </p>
 
                 {/* CTA buttons */}
                 <div className="mt-3 flex gap-2">
                   <Button onClick={handleCtaClick} className="h-8 px-3 text-xs flex items-center">
-                    {ctaText}
+                    {currentMember.cta || ctaText}
                   </Button>
                 </div>
               </div>
